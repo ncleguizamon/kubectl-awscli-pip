@@ -17,8 +17,12 @@ RUN curl --silent https://bootstrap.pypa.io/get-pip.py | python3.7
 # Backwards compatility.
 RUN rm -fr /usr/bin/python3 && ln /usr/bin/python3.7 /usr/bin/python3
 
-RUN pip3 install pipenv
+RUN apt install software-properties-common python-software-properties
+RUN add-apt-repository ppa:pypa/ppa
+RUN apt update
+RUN apt install pipenv
 
+RUN apt-get install python3.6
 
 #install pipenv 
 RUN apt-get install curl -y 
