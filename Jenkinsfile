@@ -21,11 +21,11 @@ pipeline {
                 }
             }
         }
+        }
         stage('clear') { 
             steps {
                  sh "docker rmi $registry:$BUILD_NUMBER"
             }
         }
     }
-}
 }
