@@ -10,12 +10,17 @@ RUN apt-get update
 RUN apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv
 RUN apt-get install -y git
 
-# update pip
-RUN python3.6 -m pip install pip --upgrade
-RUN python3.6 -m pip install wheel
+# -- Install Pipenv:
+RUN apt update && apt install python3.7-dev libffi-dev -y
+RUN curl --silent https://bootstrap.pypa.io/get-pip.py | python3.7
+
+# Backwards compatility.
+RUN rm -fr /usr/bin/python3 && ln /usr/bin/python3.7 /usr/bin/python3
+
+RUN pip3 install pipenv
+
 
 #install pipenv 
-RUN pip install pipenv 
 RUN apt install curl -y 
 RUN apt install unzip
 
