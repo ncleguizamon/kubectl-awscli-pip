@@ -15,4 +15,4 @@ RUN python3.6 -m pip install pip --upgrade
 RUN python3.6 -m pip install wheel
 
 #install pipenv 
-RUN apt-get install pipenv 
+RUN pip install pipenv 
