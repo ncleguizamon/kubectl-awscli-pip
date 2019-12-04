@@ -1,6 +1,6 @@
 from ubuntu:18.04
 
-RUN apt install awscli
+
 # install pip
 RUN apt-get update && \
   apt-get install -y software-properties-common && \
