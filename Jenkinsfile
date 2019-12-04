@@ -1,30 +1,30 @@
 pipeline {
-  environment {
+    environment {
     registry = "ncleguizamon/kubectl-awscli-pip"
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
-  agent any
- 
-    stage('Building image') {
-      steps{
-        script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                 script {
+                dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                } 
+            }
         }
-      }
-    }
-    stage('Deploy Image') {
-      steps{
-         script {
-            docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
-          }
+        stage('deploy') { 
+            steps {
+                 script {
+                    docker.withRegistry( '', registryCredential ) {
+                    dockerImage.push()
+                }
+            }
         }
-      }
+        stage('clear') { 
+            steps {
+                 sh "docker rmi $registry:$BUILD_NUMBER"
+            }
+        }
     }
-    stage('Remove Unused docker image') {
-      steps{
-        sh "docker rmi $registry:$BUILD_NUMBER"
-      }
-    }
-  }
+}
