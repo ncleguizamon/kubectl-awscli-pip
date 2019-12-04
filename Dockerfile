@@ -18,6 +18,5 @@ RUN python3.6 -m pip install wheel
 RUN pip install pipenv 
 RUN apt install curl -y 
 RUN apt install unzip
-RUN curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-RUN unzip awscliv2.zip
-RUN ./aws/install
+
+RUN pip install awscli
