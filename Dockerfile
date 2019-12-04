@@ -21,7 +21,7 @@ RUN pip3 install pipenv
 
 
 #install pipenv 
-RUN apt install curl -y 
-RUN apt install unzip
+RUN apt-get install curl -y 
+RUN apt-get install unzip
 
 RUN pip3 install awscli
