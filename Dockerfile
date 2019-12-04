@@ -22,4 +22,4 @@ RUN rm -fr /usr/bin/python3 && ln /usr/bin/python3.7 /usr/bin/python3
 RUN apt-get install curl -y 
 RUN apt-get install unzip
 
-RUN pip install awscli
+RUN pip3 install awscli
