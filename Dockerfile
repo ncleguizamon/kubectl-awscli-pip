@@ -17,4 +17,4 @@ RUN apt-get install unzip
 
 RUN pip3 install awscli
 
-RUN helm
+RUN helm plugin install https://github.com/hypnoglow/helm-s3.git
