@@ -20,4 +20,4 @@ RUN kubectl
 
 RUN apt-get install unzip
 
-RUN pip3 install awscli
+RUN pip install awscli
