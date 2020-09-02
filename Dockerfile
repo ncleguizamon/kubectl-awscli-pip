@@ -5,7 +5,7 @@ FROM ubuntu
 RUN apt-get update
 
 
-RUN apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv
+RUN apt-get install python3.6
 RUN apt-get install -y git
 RUN apt-get install -y apt-transport-https
 RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
