@@ -5,7 +5,7 @@ FROM ubuntu
 RUN apt-get update
 
 
-RUN apt-get install python3.6
+RUN apt-get install python3.6 && apt-get install python3-pip
 RUN apt-get install -y git && apt-get install -y curl
 RUN apt-get install -y apt-transport-https
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.19.0/bin/linux/amd64/kubectl
@@ -20,4 +20,4 @@ RUN kubectl
 
 RUN apt-get install unzip
 
-RUN pip install awscli
+RUN pip3 install awscli
