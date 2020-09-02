@@ -12,7 +12,6 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.19.0/b
 RUN chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
 RUN kubectl
 # -- Install Pipenv:
-RUN apt update && apt install python3.7-dev libffi-dev -y
 RUN curl --silent https://bootstrap.pypa.io/get-pip.py | python3.7
 
 # Backwards compatility.
