@@ -12,10 +12,9 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.19.0/b
 RUN chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
 RUN kubectl
 # -- Install Pipenv:
-RUN curl --silent https://bootstrap.pypa.io/get-pip.py | python3.7
+RUN curl --silent https://bootstrap.pypa.io/get-pip.py | python3.6
 
-# Backwards compatility.
-RUN rm -fr /usr/bin/python3 && ln /usr/bin/python3.7 /usr/bin/python3
+
 
 
 #install pipenv 
