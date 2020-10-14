@@ -18,3 +18,4 @@ RUN apt-get install unzip
 RUN pip3 install awscli
 
 RUN helm plugin install https://github.com/hypnoglow/helm-s3.git
+RUN apt-get install jq -y 
