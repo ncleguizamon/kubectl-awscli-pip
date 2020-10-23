@@ -19,3 +19,7 @@ RUN pip3 install awscli
 
 RUN helm plugin install https://github.com/hypnoglow/helm-s3.git
 RUN apt-get install jq -y 
+RUN apt-get -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt-get -y install nodejs
+RUN npm install -g mustache
